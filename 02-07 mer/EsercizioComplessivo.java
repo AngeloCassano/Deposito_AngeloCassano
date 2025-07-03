@@ -10,10 +10,24 @@ public class EsercizioComplessivo {
         camera2.setNumero(2); //assegno il numero di camera
         camera2.setPrezzo(75); //assegno il prezzo
         Suite suite1 = new Suite(); //creo la suite 1
-        suite1.setNumero(3); //assegno il numero alla suite
-        suite1.setPrezzo(150); //assegno il prezzo alla suite
-        suite1.setServiziExtra("Minibar"); //assegno il servizio extra
-        
+        suite1.setNumero(3); //assegno il numero alla suite 1
+        suite1.setPrezzo(150); //assegno il prezzo alla suite 1
+        suite1.setServiziExtra("Minibar"); //assegno il servizio extra 
+        Suite suite2 = new Suite(); //creo la suite 2
+        suite2.setNumero(4); //assegno il numero alla suite 2
+        suite2.setPrezzo(180); //assegno il prezzo alla suite 2
+        suite2.setServiziExtra("Vasca idromassagggio"); //assegno il servizio extra
+        System.out.println("I dettagli della camera 2 sono: "); //stampa messaggio
+        camera2.dettagli(); //richiamo metodo dettagli
+        System.out.println("I dettagli della prima camera inserrita sono: ");
+        camera1.dettagli(false); //richiamo metodo dettagli con parametro false
+        System.out.println("I dettagli della suite 1 sono: "); //stampa messaggio
+        suite1.dettagli(); //richiamo dettagli su suite1 
+        hotel.addCamera(camera1);//aggiungo la camera 1 alla lista delle camere dell'hotel
+        hotel.addCamera(camera2);//aggiungo la camera 2 alla lista delle camere dell'hotel
+        hotel.addCamera(suite1);//aggiungo la suite 1 alla lista delle camere dell'hotel
+        hotel.addCamera(suite2);//aggiungo la suite 2 alla lista delle camere dell'hotel
+        System.out.println("Il numero di suite nell'hotel è di: "+Hotel.contaSuite(hotel.getLista()));//stampo il numero di suite nell'hotel
 
     }
 }
@@ -50,7 +64,7 @@ class Camera{ //classe base Camera
             System.out.println("Il numero della camera è : "+this.getNumero());
         }
     }
-
+    
 }
 
 class Suite extends Camera{
@@ -85,6 +99,10 @@ class Hotel {
 
     void addCamera(Camera camera){ //aggiunge una camera alla lista
         lista.add(camera);
+    }
+
+    ArrayList<Camera> getLista(){ //metodo get della lista di camere
+        return this.lista;
     }
 
     static int contaSuite(ArrayList<Camera> lista){ //conta le suite presenti nell'hotel
