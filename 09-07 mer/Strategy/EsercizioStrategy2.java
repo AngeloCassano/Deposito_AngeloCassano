@@ -34,7 +34,7 @@ class PagamentoContext { //classe pagamaneto context (context)
         this.metodoPagamento = metodoPagamento;
     }
 
-    public void eseguiPagamento(double importo){
+    public void eseguiPagamento(double importo){ //richiama paga di metodoPagamento per pagare l'importo passato come parametro
         metodoPagamento.paga(importo);
     }
 }
@@ -43,7 +43,7 @@ class Acquisto {
     private static Acquisto instance;  
     // Istanza privata statica della classe 
 
-    private PagamentoContext metodoPagamento;
+    private PagamentoContext metodoPagamento; //variabile che contiene un'istanza di PagamentoContext
   
 
     // Costruttore privato per impedire l'istanziazione diretta
@@ -61,11 +61,11 @@ class Acquisto {
         return instance;
     }
 
-    public void setMetodoPagamento(PagamentoContext metodoPagamento){
+    public void setMetodoPagamento(PagamentoContext metodoPagamento){ //assegno il metodoPagamento
         this.metodoPagamento = metodoPagamento;
     }
 
-    public void effettuaPagamento(double importo ){
+    public void effettuaPagamento(double importo ){// metodo che richiama esegui pagamento
         metodoPagamento.eseguiPagamento(importo);
     }
 
