@@ -58,7 +58,7 @@ class Camion implements IVeicolo {
 }
 
 // 
-class VeicoloFactory {
+abstract class VeicoloFactory {
     
     static IVeicolo CreaVeicolo(String tipo){
         
