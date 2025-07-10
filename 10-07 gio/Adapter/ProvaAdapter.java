@@ -1,0 +1,32 @@
+public class ProvaAdapter { //client
+    public static void main(String[] args) {
+        Adaptee adaptee = new Adaptee();
+        Target adapter = new Adapter(adaptee);
+        adapter.request();
+    }
+}
+
+//target interface
+interface Target{
+    void request();
+}
+
+//adaptee
+class Adaptee {
+    void specificRequest(){
+        System.out.println("Richiesta specifica eseguita");
+    }
+}
+
+//Adapter
+class Adapter implements Target{
+    private Adaptee adaptee;
+
+    public Adapter(Adaptee adaptee){
+        this.adaptee = adaptee;
+    }
+
+    public void request(){
+        adaptee.specificRequest();
+    }
+}
