@@ -12,23 +12,17 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "todo")
-public class Todo {
+@Table(name = "utenti")
+public class Utente {
 
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private Long id;
 
 @Column(nullable = false)
-private String descrizione;
+private String nome;
 
-private boolean completato;
-
-@ManyToOne
-@JoinColumn(name = "utente_id", nullable = false)
-private Utente utente;
-
-@OneToMany(mappedBy = "todo", cascade = CascadeType.ALL, orphanRemoval = true)
+@OneToMany(mappedBy = "utente", cascade = CascadeType.ALL, orphanRemoval = true)
 @JsonIgnore
-private List<Commento> commenti;
+private List<Todo> todoList;
 }
