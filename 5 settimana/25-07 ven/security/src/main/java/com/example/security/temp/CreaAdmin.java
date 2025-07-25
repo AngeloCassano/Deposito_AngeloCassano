@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.security.model.Utente;
 import com.example.security.repository.UtenteRepository;
-
+/* 
 @Service
 public class CreaAdmin {
 
@@ -32,3 +32,4 @@ public class CreaAdmin {
         }
     }
 }
+    */
